@@ -15,26 +15,71 @@ struct ContentView: View {
     @State var target = Int.random(in: 1...100)
     @State var totalScore = 0
     @State var round = 1
+    let midnightBlue = Color(red: 0.0/255.0, green: 51.0/255.0, blue: 102.0/255.0)
+    
+    struct Shadow: ViewModifier {
+        func body(content: Content) -> some View {
+            return content.shadow(color: Color.black, radius: 5, x: 2, y: 2)
+        }
+    }
+    
+    struct LabelStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.white)
+                .modifier(Shadow())
+                .font(Font.custom("Arial Rounded MT Bold", size: 18))
+        }
+    }
+    
+    struct ValueStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.yellow)
+                .font(Font.custom("Arial Rounded MT Bold", size: 24))
+                .modifier(Shadow())
+        }
+    }
+    
+    struct ButtonLargeTextStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.black)
+                .font(Font.custom("Arial Rounded MT Bold", size: 18))
+        }
+    }
+    
+    struct ButtonSmallTextStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.black)
+                .font(Font.custom("Arial Rounded MT Bold", size: 12))
+        }
+    }
+    
     var body: some View {
         VStack {
             Spacer()
             // Target Row
             HStack {
-                Text("Put the bullseye as close as you can to:")
-                Text("\(target)")
+                Text("Put the bullseye as close as you can to:").modifier(LabelStyle())
+                Text("\(target)").modifier(ValueStyle())
             }
             Spacer()
             
             // Slider Row
             HStack{
-                Text("1")
-                Slider(value: $sliderValue, in: 1...100)
-                Text("100")
+                Text("1").modifier(LabelStyle())
+                Slider(value: $sliderValue, in: 1...100).accentColor(Color.green)
+                Text("100").modifier(LabelStyle())
             }
+            Spacer()
+            
+            // Hit me button
             Button(action: {
                 self.alertIsVisible = true
             }) {
-                Text(/*@START_MENU_TOKEN@*/"Hit Me!"/*@END_MENU_TOKEN@*/)
+                Text(/*@START_MENU_TOKEN@*/"Hit Me!"/*@END_MENU_TOKEN@*/).modifier(ButtonLargeTextStyle())
             }
             .alert(isPresented: $alertIsVisible) { () -> Alert in
                 return Alert(title: Text(alertTitle()), message: Text("The slider's value is \(sliderValueRounded()).\n" +
@@ -44,6 +89,7 @@ struct ContentView: View {
                         self.round += 1
                     })
             }
+            .background(Image("Button")).modifier(Shadow())
             Spacer()
             
             //Score Row
@@ -51,20 +97,29 @@ struct ContentView: View {
                 Button(action: {
                     self.resetGame()
                 }) {
-                    Text("Start over")
-                }
+                    HStack{
+                        Image("StartOverIcon")
+                        Text("Start over").modifier(ButtonSmallTextStyle())
+                    }
+                    
+                }.background(Image("Button")).modifier(Shadow())
                 Spacer()
-                Text("Score:")
-                Text("\(totalScore)")
+                Text("Score:").modifier(LabelStyle())
+                Text("\(totalScore)").modifier(ValueStyle())
                 Spacer()
-                Text("Round:")
-                Text("\(round)")
+                Text("Round:").modifier(LabelStyle())
+                Text("\(round)").modifier(ValueStyle())
                 Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Info")
-                }
+                    HStack{
+                        Image("InfoIcon")
+                        Text("Info").modifier(ButtonSmallTextStyle())
+                    }
+                }.background(Image("Button")).modifier(Shadow())
             }.padding(.bottom,20)
         }
+        .background(Image("Background"), alignment: .center)
+        .accentColor(midnightBlue)
     }
     
     func resetGame() {
