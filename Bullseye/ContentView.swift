@@ -110,7 +110,7 @@ struct ContentView: View {
                 Text("Round:").modifier(LabelStyle())
                 Text("\(round)").modifier(ValueStyle())
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                NavigationLink(destination: AboutView()) {
                     HStack{
                         Image("InfoIcon")
                         Text("Info").modifier(ButtonSmallTextStyle())
@@ -120,6 +120,7 @@ struct ContentView: View {
         }
         .background(Image("Background"), alignment: .center)
         .accentColor(midnightBlue)
+        .navigationBarTitle("Bullseye")
     }
     
     func resetGame() {

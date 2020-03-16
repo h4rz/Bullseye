@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35149F79241F7BBE00AA0CF6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35149F78241F7BBE00AA0CF6 /* AboutView.swift */; };
 		35DB499F2403F13200C8B67C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DB499E2403F13200C8B67C /* AppDelegate.swift */; };
 		35DB49A12403F13200C8B67C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DB49A02403F13200C8B67C /* SceneDelegate.swift */; };
 		35DB49A32403F13200C8B67C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DB49A22403F13200C8B67C /* ContentView.swift */; };
@@ -16,7 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		35DB499B2403F13200C8B67C /* Bullseye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bullseye.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35149F78241F7BBE00AA0CF6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		35DB499B2403F13200C8B67C /* Bull's Eye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bull's Eye.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DB499E2403F13200C8B67C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DB49A02403F13200C8B67C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		35DB49A22403F13200C8B67C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		35DB499C2403F13200C8B67C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				35DB499B2403F13200C8B67C /* Bullseye.app */,
+				35DB499B2403F13200C8B67C /* Bull's Eye.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +65,7 @@
 				35DB49A92403F13900C8B67C /* LaunchScreen.storyboard */,
 				35DB49AC2403F13900C8B67C /* Info.plist */,
 				35DB49A62403F13900C8B67C /* Preview Content */,
+				35149F78241F7BBE00AA0CF6 /* AboutView.swift */,
 			);
 			path = Bullseye;
 			sourceTree = "<group>";
@@ -92,7 +95,7 @@
 			);
 			name = Bullseye;
 			productName = Bullseye;
-			productReference = 35DB499B2403F13200C8B67C /* Bullseye.app */;
+			productReference = 35DB499B2403F13200C8B67C /* Bull's Eye.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35149F79241F7BBE00AA0CF6 /* AboutView.swift in Sources */,
 				35DB499F2403F13200C8B67C /* AppDelegate.swift in Sources */,
 				35DB49A12403F13200C8B67C /* SceneDelegate.swift in Sources */,
 				35DB49A32403F13200C8B67C /* ContentView.swift in Sources */,
@@ -294,7 +298,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.h4rz.Bullseye;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bull's Eye";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,7 +318,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.h4rz.Bullseye;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bull's Eye";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
